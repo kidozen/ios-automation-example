@@ -1,0 +1,1 @@
+instruments -t /Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/PlugIns/AutomationInstrument.bundle/Contents/Resources/Automation.tracetemplate "/Users/user/Library/Application Support/iPhone Simulator/6.0/Applications/AFF90D0A-7AFB-4FA6-8C52-A15E270C0CEC/tasks.app" -e UIASCRIPT /Users/user/Desktop/aut/UserAddTaskThenDeleteIt.js
