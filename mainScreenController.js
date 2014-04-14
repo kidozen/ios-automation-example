@@ -27,20 +27,31 @@ mainScreenController.prototype.checkAlltasks = function(){
 	app.mainWindow().tableViews()["Empty list"].cells()["All"].tap();
 }
 
-// When add a task an alert is shown, so I need to handle it
+//set title
 
-UIATarget.onAlert = function onAlert(alert) {
-	target.delay(1);
-	var title = alert.name();
-	UIALogger.logWarning("Alert with title '" + title + "' encountered!");
-	
-	if (title == "New task") 
-   		{ 
-    		app.alert().tableViews()["Empty list"].cells()[0].textFields()[0].setValue("Meeting");
-			app.alert().tableViews()["Empty list"].cells()[1].textFields()[0].setValue("important");
-			app.alert().buttons()["Ok"].tap();
-    		return true; 
-   		}
-  	return false;
+mainScreenController.prototype.setTaskTitle = function(titleValue){
+	app.mainWindow().scrollViews()[0].textFields()["titleTextField"].setValue(titleValue);
 }
 
+
+//set description
+
+mainScreenController.prototype.setDescriptionTitle = function(descriptionValue){
+	app.mainWindow().scrollViews()[0].textViews()["descriptionTextView"].setValue(descriptionValue);
+}
+
+//tap ok
+
+mainScreenController.prototype.tapOk = function(){
+	app.mainWindow().scrollViews()[0].buttons()["okButton"].tap();
+}
+
+//tap cancel
+mainScreenController.prototype.tapCancel = function(){
+	app.navigationBar().leftButton().tap();
+}
+
+//dismiss keyboard
+mainScreenController.prototype.dismissKeyboard = function(){
+	app.windows()[1].toolbar().buttons()["Done"].tap();
+}
