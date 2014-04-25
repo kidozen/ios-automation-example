@@ -8,7 +8,7 @@ function taskDetailController (){
 
 // tap on a task
 taskDetailController.prototype.tapTask = function(title, description){
-	app.mainWindow().tableViews()["Empty list"].cells()[title+", "+description].buttons()["More info, "+title+", "+description].tap();
+	app.mainWindow().tableViews()["Empty list"].cells()[0].elements()["More info, Meeting_important"].tap();
 }
 
 // delete task
